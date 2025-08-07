@@ -9,9 +9,11 @@ from tasks.reminder_checker import start_reminder_loop
 from backend.database.models import Base  
 from backend.database.session import engine  
 from backend.controllers import users, auth, reminders  
-  
+from backend.controllers import user_controller  
+
 env_path = Path(__file__).parent.parent / ".env"  
 load_dotenv(dotenv_path=env_path)  
+
   
 @asynccontextmanager  
 async def lifespan(app: FastAPI):  
@@ -26,7 +28,7 @@ async def lifespan(app: FastAPI):
             await task  
   
 app = FastAPI(lifespan=lifespan)  
-  
+app.include_router(user_controller.router)  
 app.include_router(users.router, prefix="/users", tags=["users"])  
 app.include_router(auth.router, prefix="/auth", tags=["auth"])  
 app.include_router(reminders.router, prefix="/reminders", tags=["reminders"])  
