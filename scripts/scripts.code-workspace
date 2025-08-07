@@ -1,0 +1,45 @@
+{
+	"folders": [
+		{
+			"name": "scripts",
+			"path": "."
+		},
+		{
+			"name": "Python_Relationkeeps",
+			"path": "../../RelationKeeps/Python_Relationkeeps"
+		},
+		{
+			"name": "tasks",
+			"path": "../tasks"
+		},
+		{
+			"name": "utils",
+			"path": "../utils"
+		},
+		{
+			"name": "venv",
+			"path": "../venv"
+		},
+		{
+			"name": ".vscode",
+			"path": "../.vscode"
+		},
+		{
+			"name": "__pycache__",
+			"path": "../__pycache__"
+		},
+		{
+			"name": "backend",
+			"path": "../backend"
+		},
+		{
+			"name": "bot",
+			"path": "../bot"
+		},
+		{
+			"name": "scheduler",
+			"path": "../scheduler"
+		}
+	],
+	"settings": {}
+}
