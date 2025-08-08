@@ -9,8 +9,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.ext.asyncio import AsyncSession  
 from sqlalchemy.future import select  
 from backend.database.session import get_db  
-from backend.database.models import User  
-  
+from backend.models.user import User 
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key")  
 ALGORITHM = "HS256"  
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))  

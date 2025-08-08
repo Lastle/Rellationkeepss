@@ -58,7 +58,7 @@ async def add_reminder(telegram_id: int, contact_name: str, message: str, remind
     try:  
         async with aiohttp.ClientSession() as session:  
             async with session.post(  
-                "http://ВАШ_АДРЕС_API/api/reminders/",   # <-- укажи свой адрес!  
+                "http://localhost:8001/reminders/",   # <-- укажи свой адрес!  
                 headers=headers,  
                 json=payload  
             ) as resp:  

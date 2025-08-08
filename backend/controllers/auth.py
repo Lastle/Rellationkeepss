@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select  
 from pydantic import BaseModel  
 from backend.database.session import get_db  
-from backend.database.models import User  
+from backend.models.user import User   
 from backend.services.security import create_access_token, get_current_user  
 from backend.schemas.auth import Token  
   

@@ -1,7 +1,7 @@
 # backend/init_db.py
 import asyncio
 from backend.database.session import engine
-from backend.database.models import Base
+from backend.database.session import Base
 
 async def init_db():
     async with engine.begin() as conn:

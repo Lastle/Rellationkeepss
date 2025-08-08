@@ -16,4 +16,4 @@ class ReminderOut(BaseModel):
     is_draft: bool  
   
     class Config:  
-        orm_mode = True  # Важно! чтобы Pydantic знал, что это ORM-объект  
+        from_attributes = True 

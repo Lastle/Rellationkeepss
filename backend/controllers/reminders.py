@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status, BackgroundTasks  
 from sqlalchemy.ext.asyncio import AsyncSession  
 from sqlalchemy.future import select  
-from backend.database.models import Reminder, User  
+from backend.models.user import User
+from backend.models.reminder import Reminder
 from backend.database.session import get_db  
 from backend.services.security import get_current_user  
 from backend.services.reminder_sender import send_reminder_message  

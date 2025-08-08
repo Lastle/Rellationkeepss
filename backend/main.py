@@ -4,13 +4,11 @@ from pathlib import Path
 from contextlib import asynccontextmanager, suppress  
 from dotenv import load_dotenv  
 from fastapi import FastAPI  
-  
-from tasks.reminder_checker import start_reminder_loop  
-from backend.database.models import Base  
-from backend.database.session import engine  
 from backend.controllers import users, auth, reminders  
 from backend.controllers import user_controller  
-
+from backend.models.user import User
+from backend.database.session import engine, Base  
+from backend.services.reminder_sender import start_reminder_loop  
 env_path = Path(__file__).parent.parent / ".env"  
 load_dotenv(dotenv_path=env_path)  
 
@@ -32,7 +30,6 @@ app.include_router(user_controller.router)
 app.include_router(users.router, prefix="/users", tags=["users"])  
 app.include_router(auth.router, prefix="/auth", tags=["auth"])  
 app.include_router(reminders.router, prefix="/reminders", tags=["reminders"])  
-  
 @app.get("/")  
 async def root():  
     return {"message": "Backend is running!"}  
